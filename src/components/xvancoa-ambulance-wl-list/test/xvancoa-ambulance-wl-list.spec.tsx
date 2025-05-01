@@ -7,12 +7,10 @@ describe('xvancoa-ambulance-wl-list', () => {
       components: [XvancoaAmbulanceWlList],
       html: `<xvancoa-ambulance-wl-list></xvancoa-ambulance-wl-list>`,
     });
-    expect(page.root).toEqualHtml(`
-      <xvancoa-ambulance-wl-list>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </xvancoa-ambulance-wl-list>
-    `);
+    const wlList = page.rootInstance as XvancoaAmbulanceWlList;
+    const expectedPatients = wlList?.waitingPatients?.length
+
+    const items = page.root.shadowRoot.querySelectorAll("md-list-item");
+    expect(items.length).toEqual(expectedPatients);
   });
 });
