@@ -7,12 +7,18 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface XvancoaAmbulanceWlApp {
+        "ambulanceId": string;
+        "apiBase": string;
         "basePath": string;
     }
     interface XvancoaAmbulanceWlEditor {
+        "ambulanceId": string;
+        "apiBase": string;
         "entryId": string;
     }
     interface XvancoaAmbulanceWlList {
+        "ambulanceId": string;
+        "apiBase": string;
     }
 }
 export interface XvancoaAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
@@ -72,13 +78,19 @@ declare global {
 }
 declare namespace LocalJSX {
     interface XvancoaAmbulanceWlApp {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "basePath"?: string;
     }
     interface XvancoaAmbulanceWlEditor {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "entryId"?: string;
         "onEditor-closed"?: (event: XvancoaAmbulanceWlEditorCustomEvent<string>) => void;
     }
     interface XvancoaAmbulanceWlList {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "onEntry-clicked"?: (event: XvancoaAmbulanceWlListCustomEvent<string>) => void;
     }
     interface IntrinsicElements {
